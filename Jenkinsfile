@@ -14,14 +14,13 @@ pipeline {
         stage('Install Docker with Ansible') {
             steps {
                 script {
-                    sshagent(['ubuntu']) {
-                        sh '''
+                      sh '''
                         ansible-playbook -i test-server, install_docker.yml
                         '''
                     }
                 }
             }
-        }
+        
         stage('Build and Deploy PHP Docker Container') {
             steps {
                 script {
