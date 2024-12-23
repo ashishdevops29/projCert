@@ -41,7 +41,7 @@ pipeline {
         failure {
             script {
                 // Delete the running container if Job 3 fails
-                sh 'su docker rm -f php-app'
+                sh 'sudo docker rm -f php-app'
             }
         }
     }
