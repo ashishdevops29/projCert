@@ -6,7 +6,7 @@ pipeline {
                 script {
                     sshagent(['ubuntu']) {
                         sh '''
-                        ssh -o StrictHostKeyChecking=no user@test-server "sudo apt-get update && sudo apt-get install -y puppet"
+                        ssh -o StrictHostKeyChecking=no ubuntu@98.84.170.85 "sudo apt-get update && sudo apt-get install -y puppet"
                         '''
                     }
                 }
