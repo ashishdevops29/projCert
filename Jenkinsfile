@@ -29,10 +29,10 @@ pipeline {
                     git 'https://github.com/ashishdevops29/projCert.git'
                     
                     // Build Docker image
-                    sh 'docker build -t php-app .'
+                    sh 'su docker build -t php-app .'
                     
                     // Run the Docker container on the test server
-                    sh 'docker run -d --name php-app -p 80:80 php-app'
+                    sh 'su docker run -d --name php-app -p 80:80 php-app'
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
         failure {
             script {
                 // Delete the running container if Job 3 fails
-                sh 'docker rm -f php-app'
+                sh 'su docker rm -f php-app'
             }
         }
     }
