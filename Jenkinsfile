@@ -1,5 +1,5 @@
 pipeline {
-    agent test-server
+    agent any
     stages {
         stage('Install Puppet Agent') {
             steps {
