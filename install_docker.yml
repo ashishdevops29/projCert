@@ -1,0 +1,9 @@
+---
+- name: Install Docker on Test Server
+  hosts: test-server
+  become: yes  # Ensures that commands are run with sudo privilege
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
