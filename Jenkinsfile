@@ -10,7 +10,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
         stage('Install Docker with Ansible') {
             steps {
                 script {
