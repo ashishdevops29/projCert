@@ -4,7 +4,7 @@ RUN apt-get update -y
 
 RUN apt-get install -y apache2
 
-RUN ufw allow in "Apache"
+#RUN ufw allow in "Apache"
 
 RUN apt install -y php libapache2-mod-php php-mysql
 
