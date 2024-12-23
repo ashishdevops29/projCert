@@ -14,9 +14,8 @@ pipeline {
         stage('Install Docker with Ansible') {
             steps {
                 script {
-                    sshagent ( ['ubuntu (master)'])  {
-                        sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@18.212.99.55 "ansible-playbook /home/ubuntu/projCert/install_docker.yml"
+                     sh '''
+                        ssh  ubuntu@18.212.99.55 "ansible-playbook /home/ubuntu/projCert/install_docker.yml"
                         '''
                     }
                 }
