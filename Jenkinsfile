@@ -16,7 +16,7 @@ pipeline {
                 script {
                     sshagent(['ubuntu']) {
                         sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@18.212.99.55 "ansible-playbook -i test-server, install_docker.yml"
+                        ssh -o StrictHostKeyChecking=no ubuntu@18.212.99.55 "ansible-playbook install_docker.yml"
                         '''
                     }
                 }
