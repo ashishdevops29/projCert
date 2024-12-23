@@ -14,12 +14,14 @@ pipeline {
         stage('Install Docker with Ansible') {
             steps {
                 script {
-                      sh '''
-                        ansible-playbook -i test-server, install_docker.yml
+                    sshagent(['ubuntu']) {
+                        sh '''
+                        ssh -o StrictHostKeyChecking=no ubuntu@18.212.99.55 "ansible-playbook -i test-server, install_docker.yml"
                         '''
                     }
                 }
             }
+        }
         
         stage('Build and Deploy PHP Docker Container') {
             steps {
